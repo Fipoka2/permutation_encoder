@@ -47,9 +47,33 @@ public class Main{
         message = encoder.encode(message);
         System.out.println();
         System.out.println(ANSI_RED + "Encoded message: " + ANSI_RESET + message);
-        if (message.length()%encoder.getUnitCapacity()==0)
-            System.out.println(ANSI_RED + "Decoded message: " + ANSI_RESET + encoder.decode(message));
-        else System.out.println( ANSI_RED + "An error occurred while encoding a message" + ANSI_RESET);
+
+        System.out.println("1:enter  decoded message\n2: use default decoded message  ");
+        String msg;
+        switch (sc.nextInt()){
+            case 1: {
+                sc.nextLine();
+                msg = sc.nextLine();
+                System.out.println("capacity:");
+                int capacity  = sc.nextInt();
+                encoder.setUnitCapacity(capacity);
+                System.out.println("transposition array:");
+                int arr[] = new int[capacity];
+                for (int i = 0;i<capacity;i++)
+                    arr[i] = sc.nextInt();
+                encoder.setPermutationArray(arr);
+                break;
+            }
+            case 2:{
+                msg = message; break;
+            }
+            default: { msg = message; break;
+            }
+        }
+
+        if (msg.length()%encoder.getUnitCapacity()==0)
+            System.out.println(ANSI_RED + "Decoded message: " + ANSI_RESET + encoder.decode(msg));
+        else System.out.println( ANSI_RED + "An error occurred while encoding a message." + ANSI_RESET);
 
 
     }

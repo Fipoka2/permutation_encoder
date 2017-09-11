@@ -87,4 +87,15 @@ public class PermutationEncoder implements Encoder{
         return unitCapacity;
     }
 
+    public int[] getPermutationArray() {
+        return permutationArray;
+    }
+
+    public void setPermutationArray(int[] permutationArray) {
+        this.permutationArray = permutationArray;
+    }
+
+    public void setUnitCapacity(int unitCapacity) {
+        this.unitCapacity = unitCapacity;
+    }
 }
