@@ -11,7 +11,7 @@ public class Main{
             " the Internet.";
 
     public static void main(String[] args) {
-
+        Validator v = new ArrayValidator();
         String message;
         PermutationEncoder encoder;
 
@@ -27,6 +27,17 @@ public class Main{
                 int arr[] = new int[capacity];
                 for (int i = 0;i<capacity;i++)
                     arr[i] = sc.nextInt();
+                try {
+                    if (!v.isValid(arr)) {
+                        System.out.println("array exception...");
+                        System.exit(0);
+                    }
+                }
+                catch (ArrayIndexOutOfBoundsException ex)
+                {
+                    System.out.println("array exception...");
+                    System.exit(0);
+                }
                 encoder = new PermutationEncoder(arr,capacity);
                 break;
             }
@@ -61,6 +72,17 @@ public class Main{
                 int arr[] = new int[capacity];
                 for (int i = 0;i<capacity;i++)
                     arr[i] = sc.nextInt();
+                try {
+                    if (!v.isValid(arr)) {
+                        System.out.println("array exception...");
+                        System.exit(0);
+                    }
+                }
+                catch (ArrayIndexOutOfBoundsException ex)
+                {
+                    System.out.println("array exception..");
+                    System.exit(0);
+                }
                 encoder.setPermutationArray(arr);
                 break;
             }
