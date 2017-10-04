@@ -78,6 +78,7 @@ public class Main{
                         System.exit(0);
                     }
                 }
+                //fsdsfs
                 catch (ArrayIndexOutOfBoundsException ex)
                 {
                     System.out.println("array exception..");
